@@ -5,7 +5,7 @@
 
 
 // 滴的最长时长，单位毫秒
-int s_u_time = 150;
+int s_u_time = 110;
 // 防止抖动的忽略时间，少于这个时间的按压会忽略。单位：毫秒
 int s_shake_time = 30;
 // 播放电码的单位时长
@@ -15,16 +15,22 @@ int s_bee_freq = 1800;
 // 电键类型
 // true 手动建
 // false 自动键
-bool s_key_type = true;
+bool s_key_type = false;
 // 按键方向
-// true 左嘀，右嗒
-bool s_auto_key_type = true;
+// true 左嘀，右嗒； false 反向
+bool s_auto_key_type = false;
 // 是否自动发送
 bool s_auto_send = false;
 // 自动发送电码的间隔时长
 int s_auto_send_time = 2000;
 // 字母间隔时长
 int s_split_time = 300;
+
+// 是否启用触摸电键
+bool s_touch_key = true;
+
+// 触摸阈值
+int s_touch_val = 20;
 
 
 // 字母，单词间隔时间变量

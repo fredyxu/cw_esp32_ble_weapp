@@ -18,6 +18,9 @@ void setup() {
 	pinMode(pin_key, INPUT_PULLUP);
 	pinMode(pin_key_di, INPUT_PULLUP);
 	pinMode(pin_key_da, INPUT_PULLUP);
+	// 触摸引脚
+	pinMode(pin_touch_1, INPUT);
+	pinMode(pin_touch_2, INPUT);
 
 	// 初始化串口
 	Serial.begin(115200);
