@@ -1,7 +1,7 @@
 # 使用ESP32与微信小程序实现的摩尔斯电码练习器
 #### 全部功能需要配合微信小程序一起使用。在微信小程序中搜索“ZClubCola”即可找到对应的微信小程序。或者使用微信扫描下方的小程序码。
-<div style = "display: flex; flex: 1;flex-direction: row; justify-content: center; align-items: center">
-<img style="text-align: center" src="https://tva1.sinaimg.cn/large/00831rSTgy1gcl8ate0vuj30by0bymz4.jpg" width="200px" />
+<div style="text-align: center">
+	<img style="text-align: center" src="https://tva1.sinaimg.cn/large/00831rSTgy1gcl8ate0vuj30by0bymz4.jpg" width="200px" />
 </div>
 
 
