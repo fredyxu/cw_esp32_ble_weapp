@@ -2,7 +2,7 @@
 #### 全部功能需要配合微信小程序一起使用。在微信小程序中搜索“ZClubCola”即可找到对应的微信小程序。或者使用微信扫描下方的小程序码。
 <img src="https://tva1.sinaimg.cn/large/00831rSTgy1gcl8ate0vuj30by0bymz4.jpg" width="200px" />
 
-## 如何安装
+## 使用方法
 - #### 下载Arduino的IDE
 	在 <a href = "https://arduino.cc" target = "__blank">官网（https://arduino.cc）</a>下载即可
 - #### 在Arduino的IDE中安装esp32开发板支持包
@@ -31,7 +31,7 @@
 - #### 设置参数
 
 
-## 使用方法
+
 
 
 ## 更新日志
