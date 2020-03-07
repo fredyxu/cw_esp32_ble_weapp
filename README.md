@@ -3,7 +3,7 @@
 
 ## 如何安装
 - ### 下载Arduino的IDE
-	在官网（https://arduino.cc）上下载即可
+	在 <a href = "https://arduino.cc" target = "__blank">官网（https://arduino.cc）</a>下载即可
 - ### 在Arduino的IDE中安装esp32开发板支持包
 	在Arduino的IDE中依次选择：首选项 - 设置 
 
