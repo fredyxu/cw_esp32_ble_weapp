@@ -4,6 +4,16 @@
 <div align=left> <img src = "https://tva1.sinaimg.cn/large/00831rSTgy1gcl8ate0vuj30by0bymz4.jpg" width="200px" />
 </div>
 
+## 物料清单
+|名称|数量|说明|
+|:---:|:---:|:---|
+|ESP32开发板|1块||
+|无源蜂鸣器|1只|3.3V供电，或根据自己实际情况选择|
+|3.5毫米音频母座|1个|可选|
+|开关|1个|根据实际情况选择|
+|杜邦线|若干||
+
+
 ## 使用方法
 - #### 下载Arduino的IDE
 	在 <a href = "https://arduino.cc" target = "__blank">官网（https://arduino.cc）</a>下载即可
