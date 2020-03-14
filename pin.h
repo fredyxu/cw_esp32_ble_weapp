@@ -7,14 +7,14 @@
 
 // 电键的引脚
 // 手动建
-#define pin_key 17
+#define pin_key 9
 
 // 自动键
-#define pin_key_da 16
-#define pin_key_di 17
+#define pin_key_da 14
+#define pin_key_di 9
 
 // 触摸引脚
-#define pin_touch_1 T4
-#define pin_touch_2 T5
+#define pin_touch_1 T5
+#define pin_touch_2 T4
 
 #endif

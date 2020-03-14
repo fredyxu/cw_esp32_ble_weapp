@@ -62,7 +62,7 @@ void update_settings(String item, String value) {
 	else if (item == "touch_key") {
 		if(value == "false") {
 			s_touch_key = false;
-		}3
+		}
 		else if(value == "true") {
 			s_touch_key = true;
 		}
