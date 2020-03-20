@@ -1,5 +1,8 @@
+#define version 0.01
+
 #include "pin.h"
 #include "var_settings.h"
+#include "op_eeprom.h"
 #include "var_morse.h"
 #include "op_bee.h"
 #include "op_settings.h"
@@ -35,6 +38,25 @@ void setup() {
 	
 	Serial.println("初始化完成");
 
+	Serial.println(s_split_time);
+
+	init_eeprom();
+	if(check_first_run()) {
+		Serial.println();
+		Serial.println("FIRST RUN");
+		Serial.println();
+		Serial.println();
+		set_all_settings();
+		set_per_code();
+	}
+	else {
+		Serial.println();
+		Serial.print("LOAD ALL SETTINGS");
+		Serial.println();
+		Serial.println();
+		load_all_settings();
+	}
+	show_all_settings();
 }
 
 void loop() {
@@ -48,7 +70,8 @@ void loop() {
 		check_manual_key();
 	}
 	// 自动键
-	else if(!s_key_type) {
+	else if(!s_key_type) 
+	{
 		check_auto_key();
 	}
 }

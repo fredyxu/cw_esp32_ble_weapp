@@ -30,7 +30,7 @@ int s_split_time = 300;
 bool s_touch_key = true;
 
 // 触摸阈值
-int s_touch_val = 20;
+int s_touch_val = 1;
 
 
 // 字母，单词间隔时间变量
@@ -44,6 +44,7 @@ bool flag_space_times = true;
 bool flag_send = false;
 // 单词敲击的记录开始符号
 bool flag_rcd = false;
+
 
 
 

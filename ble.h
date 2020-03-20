@@ -69,8 +69,7 @@ void ble_init() {
 	BLEService *pService = pServer->createService(SERVICE_UUID);
 	pCharacteristic = pService->createCharacteristic(
 		CHARACTERISTIC_UUID,
-		BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE | BLECharacteristic::PROPERTY_NOTIFY
-		// | BLECharacteristic::PROPERTY_INDICATE
+		BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE | BLECharacteristic::PROPERTY_NOTIFY | BLECharacteristic::PROPERTY_INDICATE
 	);
 	pCharacteristic->setCallbacks(new callback());
 	pService->start();
