@@ -7,14 +7,14 @@
 
 // 电键的引脚
 // 手动建
-#define pin_key 9
+#define pin_key 0
 
 // 自动键
-#define pin_key_da 14
-#define pin_key_di 9
+#define pin_key_da 4
+#define pin_key_di 0
 
 // 触摸引脚
-#define pin_touch_1 T9 // GPIO 32
-#define pin_touch_2 T8 // GPIO 33
+#define pin_touch_1 T8 // GPIO 32
+#define pin_touch_2 T9 // GPIO 33
 
 #endif

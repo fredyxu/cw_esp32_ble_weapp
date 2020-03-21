@@ -33,13 +33,60 @@ void check_auto_key() {
 
 	bool di_state = true;
 	bool da_state = true;
+
+
+	bool key_state_di = digitalRead(pin_key_di);
+	bool key_state_da = digitalRead(pin_key_da);
+
+	
 	if(s_auto_key_type) {
-		di_state = digitalRead(pin_key_di) && touch_state_1;
-		da_state = digitalRead(pin_key_da) && touch_state_2;
+		di_state = key_state_di && touch_state_1;
+		da_state = key_state_da && touch_state_2;
 	}
 	else {
-		di_state = digitalRead(pin_key_da) && touch_state_2;
-		da_state = digitalRead(pin_key_di) && touch_state_1;
+		di_state = key_state_da && touch_state_2;
+		da_state = key_state_di && touch_state_1;
+	}
+
+	// 测试
+	if(!di_state || !da_state) {
+		Serial.println();
+		Serial.println("===============");
+		Serial.print("DI_STATE: ");
+		Serial.println(di_state);
+		Serial.print("key_state_di: ");
+		Serial.println(key_state_di);
+		Serial.print("touch_state_1: ");
+		Serial.println(touch_state_1);
+
+		Serial.println("---------");
+
+		Serial.print("DA_STATE: ");
+		Serial.println(da_state);
+		Serial.print("key_state_da: ");
+		Serial.println(key_state_da);
+		Serial.print("touch_state_2: ");
+		Serial.println(touch_state_2);
+		Serial.println("===============");
+
+		
+
+
+		if(!key_state_di) {
+			Serial.println("pin_di");
+		}
+		if(!key_state_da) {
+			Serial.println("pin_da");
+			Serial.println(digitalRead(pin_key_da));
+		}
+		if(!touch_state_1) {
+			Serial.println("touch_1");
+		}
+		if(!touch_state_2) {
+			Serial.println("touch_2");
+		}
+
+		Serial.println();
 	}
 	
 	// 电码间隔
@@ -65,6 +112,7 @@ void check_auto_key() {
 		flag_space = true;
 		cs_time = millis();
 	}
+	
 }
 
 #endif

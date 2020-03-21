@@ -18,7 +18,7 @@
 void setup() {
 	// 初始化引脚
 	pinMode(pin_bee, OUTPUT);
-	pinMode(pin_key, INPUT_PULLUP);
+	// pinMode(pin_key, INPUT_PULLUP);
 	pinMode(pin_key_di, INPUT_PULLUP);
 	pinMode(pin_key_da, INPUT_PULLUP);
 	// 触摸引脚
