@@ -29,18 +29,6 @@ void check_manual_key() {
 	bool pin_state = digitalRead(pin_key);
 	// 读取引脚状态
 	bool key_state = pin_state && touch_state;
-
-	// 测试
-	if(!key_state) {
-		Serial.println();
-		if(!touch_state) {
-			Serial.println("touch");
-		}
-		if(!pin_state) {
-			Serial.println("pin");
-		}
-		Serial.println();
-	}
 	
 	// 如果是按下的，则初始化记录项目并蜂鸣器开始鸣叫
 	if(!key_state && !flag_rcd) {

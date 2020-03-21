@@ -48,46 +48,6 @@ void check_auto_key() {
 		da_state = key_state_di && touch_state_1;
 	}
 
-	// 测试
-	if(!di_state || !da_state) {
-		Serial.println();
-		Serial.println("===============");
-		Serial.print("DI_STATE: ");
-		Serial.println(di_state);
-		Serial.print("key_state_di: ");
-		Serial.println(key_state_di);
-		Serial.print("touch_state_1: ");
-		Serial.println(touch_state_1);
-
-		Serial.println("---------");
-
-		Serial.print("DA_STATE: ");
-		Serial.println(da_state);
-		Serial.print("key_state_da: ");
-		Serial.println(key_state_da);
-		Serial.print("touch_state_2: ");
-		Serial.println(touch_state_2);
-		Serial.println("===============");
-
-		
-
-
-		if(!key_state_di) {
-			Serial.println("pin_di");
-		}
-		if(!key_state_da) {
-			Serial.println("pin_da");
-			Serial.println(digitalRead(pin_key_da));
-		}
-		if(!touch_state_1) {
-			Serial.println("touch_1");
-		}
-		if(!touch_state_2) {
-			Serial.println("touch_2");
-		}
-
-		Serial.println();
-	}
 	
 	// 电码间隔
 	int sp_time = s_u_time / 2;
