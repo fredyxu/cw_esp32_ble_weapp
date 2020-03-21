@@ -14,7 +14,7 @@
 #define pin_key_di 0
 
 // 触摸引脚
-#define pin_touch_1 T8 // GPIO 32
-#define pin_touch_2 T9 // GPIO 33
+#define pin_touch_1 T8 // GPIO 33
+#define pin_touch_2 T9 // GPIO 32
 
 #endif
