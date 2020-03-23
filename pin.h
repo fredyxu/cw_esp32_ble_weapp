@@ -7,7 +7,7 @@
 
 // 电键的引脚
 // 手动建
-#define pin_key 0
+#define pin_key 4
 
 // 自动键
 #define pin_key_da 4
