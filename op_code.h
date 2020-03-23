@@ -54,32 +54,31 @@ void check_send() {
 // 播放电码
 void play_code(String p_code)
 {
+	// 间隔时长
+	int sp_time = s_play_u_time;
 	for (int i = 0; i < p_code.length(); i++)
 	{
 		if (p_code[i] == '.')
 		{
 			bee(true);
-			int s = millis();
-			delay(s_play_u_time - (millis() - s));
+			delay(s_play_u_time);
 			bee(false);
-			delay(s_play_u_time * 0.2);
+			delay(sp_time);
 		}
 		else if (p_code[i] == '-')
 		{
 			bee(true);
-			int s = millis();
-			delay(s_play_u_time * 2 - (millis() - s));
+			delay(s_play_u_time * s_di_da_scale);
 			bee(false);
-			delay(s_play_u_time * 0.2);
+			delay(sp_time);
 		}
 		else if (p_code[i] == ' ')
 		{
-			// delay(s_split_time * 1.5);
-			if(s_split_time < 80) {
+			if(s_split_time * 3 < 80) {
 				delay(80);
 			}
 			else {
-				delay(s_split_time);
+				delay(sp_time * 3);
 			}
 			
 		}

@@ -14,7 +14,7 @@ bool check_first_run();
 String per_code = "BG7YXY";
 
 // 设置项目个数
-#define settings_qty 11
+#define settings_qty 14
 // 每个项目所占用的字节
 #define settings_char_qty 5
 
@@ -41,7 +41,10 @@ String settings_item[] = {
 	"s_auto_key_type", 
 	"s_auto_send", 
 	"s_touch_key", 
-	"s_touch_val"
+	"s_touch_val",
+	"s_exa_mode",
+	"s_di_da_scale",
+	"s_fault_rate",
 };
 
 // 初始化
@@ -139,6 +142,12 @@ void set_all_settings() {
 	set_settings("s_touch_key", String(s_touch_key));
 	// touch_val
 	set_settings("s_touch_val", String(s_touch_val));
+	// s_exa_mode
+	set_settings("s_exa_mode", String(s_exa_mode));
+	// s_di_da_scale
+	set_settings("s_di_da_scale", String(s_di_da_scale));
+	// s_fault_rate
+	set_settings("s_fault_rate", String(s_fault_rate));
 }
 
 void load_all_settings() {
@@ -162,6 +171,12 @@ void load_all_settings() {
 	s_touch_key = get_settings("s_touch_key").toInt();
 	// touch_val
 	s_touch_val = get_settings("s_touch_val").toInt();
+	// s_exa_mode
+	s_exa_mode = get_settings("s_exa_mode").toInt();
+	// s_di_da_scale
+	s_di_da_scale = get_settings("s_di_da_scale").toFloat();
+	// s_fault_rate
+	s_fault_rate = get_settings("s_fault_rate").toFloat();
 }
 
 void show_all_settings() {
@@ -198,6 +213,18 @@ void show_all_settings() {
 	// touch_val
 	Serial.print("s_touch_val = ");
 	Serial.println(get_settings("s_touch_val").toInt());
+
+	// s_exa_mode
+	Serial.print("s_exa_mode = ");
+	Serial.println(get_settings("s_exa_mode").toInt());
+
+	// s_di_da_scale
+	Serial.print("s_di_da_scale = ");
+	Serial.println(get_settings("s_di_da_scale").toFloat());
+
+	// s_fault_rate
+	Serial.print("s_fault_rate = ");
+	Serial.println(get_settings("s_fault_rate").toFloat());
 }
 
 #endif

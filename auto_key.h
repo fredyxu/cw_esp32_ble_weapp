@@ -48,16 +48,14 @@ void check_auto_key() {
 		da_state = key_state_di && touch_state_1;
 	}
 
-	
-	// 电码间隔
-	int sp_time = s_u_time / 2;
+
 	if(!di_state) {
 		bee(true);
 		Serial.print(".");
 		ble_send("code", ".");
-		delay(s_u_time / 2);
+		delay(s_u_time);
 		bee(false);
-		delay(sp_time);
+		delay(s_u_time);
 		flag_space = true;
 		cs_time = millis();
 	}
@@ -66,9 +64,9 @@ void check_auto_key() {
 		bee(true);
 		Serial.print("-");
 		ble_send("code", "-");
-		delay(s_u_time * 1.5);
+		delay(s_u_time * s_di_da_scale);
 		bee(false);
-		delay(sp_time);
+		delay(s_u_time);
 		flag_space = true;
 		cs_time = millis();
 	}

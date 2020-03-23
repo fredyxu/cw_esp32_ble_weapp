@@ -56,7 +56,13 @@ void setup() {
 		Serial.println();
 		load_all_settings();
 	}
-	show_all_settings();
+	// show_all_settings();
+
+	// 开机完成提示
+	// play_code("--- -.-");
+	bee(1);
+	delay(100);
+	bee(0);
 }
 
 void loop() {
@@ -64,14 +70,6 @@ void loop() {
 	check_space();
 	// 检查自动发送
 	check_send();
-	// 手动建
-	if (s_key_type)
-	{
-		check_manual_key();
-	}
-	// 自动键
-	else if(!s_key_type) 
-	{
-		check_auto_key();
-	}
+	// 电键检查
+	s_key_type? check_manual_key(): check_auto_key();
 }
