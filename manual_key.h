@@ -40,18 +40,18 @@ void check_manual_key() {
 
 	// 如果被释放，切状态为记录状态，则检查键入电码，并停止蜂鸣器鸣叫
 	else if(key_state && flag_rcd) {
-		Serial.println(s_exa_mode);
+		// Serial.println(s_exa_mode);
 		bee(false);
 		// 非严格模式
 		if(!s_exa_mode) {
 			// 如果大于单位时长，则视为输入的是划
 			if(diff_time < s_u_time) {
-				Serial.print(".");
+				// Serial.print(".");
 				ble_send("code", ".");
 			}
 			// 否则视为是点
 			else {
-				Serial.print("-");
+				// Serial.print("-");
 				ble_send("code", "-");
 			}
 		}
@@ -76,15 +76,15 @@ void check_manual_key() {
 			// Serial.println(diff_time);
 
 			if(diff_time >= di_min && diff_time <= di_max) {
-				Serial.print(".");
+				// Serial.print(".");
 				ble_send("code", ".");
 			}
 			else if(diff_time >= da_min && diff_time <= da_max) {
-				Serial.print("-");
+				// Serial.print("-");
 				ble_send("code", "-");
 			}
 			else {
-				Serial.print("*");
+				// Serial.print("*");
 				ble_send("code", "*");
 			}
 		}

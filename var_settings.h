@@ -5,13 +5,16 @@
 
 
 // 滴的最长时长，单位毫秒
-int s_u_time = 110;
+int s_u_time = 50;
 // 防止抖动的忽略时间，少于这个时间的按压会忽略。单位：毫秒
 int s_shake_time = 30;
 // 播放电码的单位时长
 int s_play_u_time = 120;
 // 蜂鸣器频率
 int s_bee_freq = 1800;
+
+
+
 // 电键类型
 // true 手动建
 // false 自动键
@@ -36,6 +39,10 @@ int s_touch_val = 20;
 // 字母，单词间隔时间变量
 unsigned long cs_time = 0;
 
+// 播放标识符，true可以播放，false停止播放
+bool flag_play_code = true;
+
+
 // 检查空格标识
 bool flag_space = false;
 // 空格次数
@@ -52,7 +59,10 @@ float s_di_da_scale = 3.0;
 // 容错比例
 float s_fault_rate = 0.10;
 
-
+// 需要播放的电码
+String var_code_list = "";
+// 要发送的蓝牙信息
+String var_ble_msg = "";
 
 
 #endif

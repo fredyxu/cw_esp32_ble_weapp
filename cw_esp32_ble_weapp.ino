@@ -1,4 +1,4 @@
-#define version 0.01
+#define version 0.0.2
 
 #include "pin.h"
 #include "var_settings.h"
@@ -64,6 +64,7 @@ void setup() {
 	delay(100);
 	bee(0);
 }
+
 
 void loop() {
 	// 检查空格

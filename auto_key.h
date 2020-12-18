@@ -51,7 +51,7 @@ void check_auto_key() {
 
 	if(!di_state) {
 		bee(true);
-		Serial.print(".");
+		// Serial.print(".");
 		ble_send("code", ".");
 		delay(s_u_time);
 		bee(false);
@@ -62,7 +62,7 @@ void check_auto_key() {
 	
 	if(!da_state) {
 		bee(true);
-		Serial.print("-");
+		// Serial.print("-");
 		ble_send("code", "-");
 		delay(s_u_time * s_di_da_scale);
 		bee(false);

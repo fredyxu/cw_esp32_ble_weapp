@@ -18,6 +18,24 @@ void ble_send(String msg);
 void ble_op_msg(String msg);
 // 分割字符串
 void str_split(String s,String p);
+// 多核发送信息
+void ble_send_core(String msg, int core);
+void ble_send_core_do(void *v);
+
+
+
+void ble_send_core(String msg, int core) {
+	var_ble_msg = msg;
+	xTaskCreatePinnedToCore(ble_send_core_do, "ble_send_core_do", 10000, NULL, 1, NULL, core);
+}
+
+void ble_send_core_do(void *v)
+{
+	pCharacteristic->setValue((char *)var_ble_msg.c_str());
+	pCharacteristic->notify();
+	var_ble_msg = "";
+	vTaskDelete(NULL);
+}
 
 void ble_send(String msg_type, String msg)
 {
@@ -58,8 +76,16 @@ void ble_op_msg(String msg) {
 		update_settings(info[1], info[2]);
 	}
 	// 播放电码
-	if(info[0] == "ply") {
+	else if(info[0] == "ply") {
 		play_code(info[1]);
+	}
+	// 播放反馈
+	else if(info[0] == "plc") {
+		flag_play_code = true;
+		play_code_core(info[1], 1);
+	}
+	else if(info[0] == "stp") {
+		flag_play_code = false;
 	}
 }
 
@@ -81,6 +107,7 @@ void ble_init() {
 	BLEDevice::startAdvertising();
 	Serial.println("蓝牙初始化完成");
 }
+
 
 
 

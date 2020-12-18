@@ -9,8 +9,40 @@ void check_space();
 void check_send();
 // 播放电码
 void play_code(String p_code);
+// 在多核播放电码
+void play_code_core(String code_list, int core);
+void play_code_core_do(void * pvParameters);
 
 #include "ble.h"
+
+void play_code_core(String code_list, int core) {
+	var_code_list = code_list;
+	xTaskCreatePinnedToCore(play_code_core_do, "play_code_core", 10000, NULL, 1, NULL,  core);
+}
+
+void play_code_core_do(void *v) {
+	if(var_code_list != "") {
+		for(int i = 0; i < var_code_list.length(); i ++) {
+			String c = String(var_code_list[i]);
+			if(flag_play_code) {
+				play_code(c);
+
+				if(c == " ") {
+					ble_send_core("cmd:play_done", 0);
+				}
+			}
+			else {
+				var_code_list = "";
+				vTaskDelete(NULL);
+				return;
+			}
+		}
+		// ble_send_core("cmd:play_done", 0);
+		ble_send("cmd", "play_done");
+	}
+	var_code_list = "";
+	vTaskDelete(NULL);
+}
 
 // 识别空格
 void check_space() {
@@ -51,6 +83,8 @@ void check_send() {
 
 }
 
+
+
 // 播放电码
 void play_code(String p_code)
 {
@@ -74,6 +108,7 @@ void play_code(String p_code)
 		}
 		else if (p_code[i] == ' ')
 		{
+			
 			if(s_split_time * 3 < 80) {
 				delay(80);
 			}
@@ -83,7 +118,11 @@ void play_code(String p_code)
 			
 		}
 	}
+	
 }
+
+
+
 
 
 
