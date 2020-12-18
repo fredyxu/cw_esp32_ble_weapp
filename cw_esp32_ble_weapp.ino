@@ -1,4 +1,4 @@
-#define version 0.0.2
+#define version 0.0.3
 
 #include "pin.h"
 #include "var_settings.h"
