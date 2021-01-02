@@ -33,6 +33,7 @@ void setup() {
 	// 初始化蜂鸣器
 	ledcSetup(0, s_bee_freq, 10);
 	ledcAttachPin(pin_bee, 0);
+	// pinMode(pin_bee, OUTPUT);
 
 	ble_init();
 	

@@ -44,8 +44,8 @@
 	电键
 	|KEY|ESP32|
 	|:---:|:---:|
-	|PIN 1|GPIO 17|
-	|PIN 2|GPIO 16|
+	|PIN 1|GPIO 4|
+	|PIN 2|GPIO 0|
 	|GND| GND|
 
 	蜂鸣器
