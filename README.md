@@ -45,7 +45,7 @@
 	|KEY|ESP32|
 	|:---:|:---:|
 	|PIN 1|GPIO 4|
-	|PIN 2|GPIO 0|
+	|PIN 2|GPIO 2|
 	|GND| GND|
 
 	蜂鸣器
