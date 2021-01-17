@@ -11,7 +11,7 @@
 
 // 自动键
 #define pin_key_da 4
-#define pin_key_di 2
+#define pin_key_di 0
 
 // 触摸引脚
 #define pin_touch_1 T8 // GPIO 33
